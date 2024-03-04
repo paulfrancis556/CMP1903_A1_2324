@@ -15,8 +15,15 @@ namespace CMP1903_A1_2324
 
         //Property
 
-
         //Method
+
+        Random random = new Random();
+
+        public int rollDie()
+        {
+            int roll = random.Next(1, 7);
+            return roll;
+        }
 
 
     }

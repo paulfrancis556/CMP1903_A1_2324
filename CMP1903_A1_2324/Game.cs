@@ -17,5 +17,42 @@ namespace CMP1903_A1_2324
 
         //Methods
 
+        public void GameLoop()
+        {
+
+            int i = 1;
+            var list = new List<int> { };
+
+            //amount to roll
+            int amountToRoll = 3;
+
+            //Roll Die
+            while (i <= amountToRoll)
+            {
+                Die die = new Die();
+                Testing debug = new Testing();
+
+                int roll = die.rollDie();
+
+                Console.WriteLine($"Die: " + i + ": " + roll);
+
+                debug.assert(roll);
+
+                list.Add(roll);
+
+                System.Threading.Thread.Sleep(1);
+
+                i++;
+
+            }
+            //for reveiw
+            Testing sumCheck = new Testing();
+            int sum = 0;
+            foreach (var item in list) { sum += item; }
+            Console.WriteLine($"Sum: " + sum);
+            sumCheck.assertSum(sum);
+
+        }
+
     }
 }

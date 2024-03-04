@@ -16,5 +16,36 @@ namespace CMP1903_A1_2324
          */
 
         //Method
+
+
+        public bool assert(int roll)
+        {
+            if (roll >= 1 && roll <= 6)
+            {
+                Console.WriteLine("Legal Roll \n");
+                return true;
+            }
+            else
+            {
+                Console.WriteLine("Illegal Roll \n");
+                return false;
+            }
+        }
+
+        public bool assertSum(int sum)
+        {
+            if (sum >= 3 && sum <= 18)
+            {
+                Console.WriteLine("Legal Sum \n");
+                return true;
+            }
+            else
+            {
+                Console.WriteLine("Illegal Sum \n");
+                return false;
+            }
+        }
+
+
     }
 }
