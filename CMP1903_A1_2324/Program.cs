@@ -15,9 +15,9 @@ namespace CMP1903_A1_2324
              * Create a Testing object to verify the output and operation of the other classes.
              */
 
-            Game game = new Game();
+            Testing game = new Testing();
 
-            game.GameLoop();
+            game.test();
 
             Console.ReadLine();
         }

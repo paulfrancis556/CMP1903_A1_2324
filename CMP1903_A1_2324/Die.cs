@@ -14,17 +14,23 @@ namespace CMP1903_A1_2324
          */
 
         //Property
-
-        //Method
-
-        Random random = new Random();
-
-        public int rollDie()
+        private int number;
+        public int Number
         {
-            int roll = random.Next(1, 7);
-            return roll;
+            get { return number; }
+            set { number = value; }
         }
 
+        //Use static to refer to the type its self rather than an instance - prevents the seed issue when using random at a rapid rate and getting the same value every time
+        private static Random random = new Random();
+
+        //Method
+        public int Roll()
+        {
+            number = random.Next(1, 7);
+            return number;
+        }
 
     }
+
 }

@@ -16,41 +16,31 @@ namespace CMP1903_A1_2324
          */
 
         //Methods
-
-        public void GameLoop()
+        public (List<int>, int) playGame()
         {
 
-            int i = 1;
-            var list = new List<int> { };
+            //Define our list to hold the dice objects
+            var dice = new List<int>();
 
-            //amount to roll
-            int amountToRoll = 3;
-
-            //Roll Die
-            while (i <= amountToRoll)
+            //Create three dice objects
+            for (int i = 0; i < 3; i++)
             {
+                //Create a die object
                 Die die = new Die();
-                Testing debug = new Testing();
 
-                int roll = die.rollDie();
+                //Insert our die to the dice list
+                dice.Add(die.Roll());
 
-                Console.WriteLine($"Die: " + i + ": " + roll);
-
-                debug.assert(roll);
-
-                list.Add(roll);
-
-                System.Threading.Thread.Sleep(1);
-
-                i++;
+                //Output each die roll
+                Console.WriteLine("Roll: " + (i+1) + ". Outcome: "+ dice[i]);
 
             }
-            //for reveiw
-            Testing sumCheck = new Testing();
-            int sum = 0;
-            foreach (var item in list) { sum += item; }
-            Console.WriteLine($"Sum: " + sum);
-            sumCheck.assertSum(sum);
+
+            //Output the sum
+            Console.WriteLine("Sum: " + dice.Sum());
+
+            //Return the dice list and dice sum for testing
+            return (dice, dice.Sum());
 
         }
 

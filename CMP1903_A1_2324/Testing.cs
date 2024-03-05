@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -16,36 +18,24 @@ namespace CMP1903_A1_2324
          */
 
         //Method
-
-
-        public bool assert(int roll)
+        public void test()
         {
-            if (roll >= 1 && roll <= 6)
-            {
-                Console.WriteLine("Legal Roll \n");
-                return true;
-            }
-            else
-            {
-                Console.WriteLine("Illegal Roll \n");
-                return false;
-            }
-        }
+            //Create the game object
+            Game game = new Game();
 
-        public bool assertSum(int sum)
-        {
-            if (sum >= 3 && sum <= 18)
-            {
-                Console.WriteLine("Legal Sum \n");
-                return true;
-            }
-            else
-            {
-                Console.WriteLine("Illegal Sum \n");
-                return false;
-            }
-        }
+            //Get the values back from the game object for debug.asset
+            var valuesToTest = game.playGame();
 
+            //Check the 3 individual die rolls
+            for (int i = 0; i < 3; i++)
+            {
+                Debug.Assert(valuesToTest.Item1[i] > 0 && valuesToTest.Item1[i] < 7, "Die value is out of bounds.");
+            }
+
+            //check the sum
+            Debug.Assert(valuesToTest.Item2 > 2 && valuesToTest.Item2 < 19, "Sum value is out of bounds.");
+
+        }
 
     }
 }
