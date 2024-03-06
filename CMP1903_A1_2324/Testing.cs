@@ -17,6 +17,13 @@ namespace CMP1903_A1_2324
          * Use debug.assert() to make the comparisons and tests.
          */
 
+        /// <summary>
+        /// Testing class contains test() Method.
+        /// Game class is instantiated and the values are captured ready for debugging. 
+        /// Using a simple loop we then check the 3 items in the first returned list using Debug.Asset()
+        /// Then we use Debug.Assert() to check the sum. 
+        /// </summary>
+
         //Method
         public void test()
         {

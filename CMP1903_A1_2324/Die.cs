@@ -13,6 +13,10 @@ namespace CMP1903_A1_2324
          * and one method that rolls the die, returns and integer and takes no parameters.
          */
 
+        /// <summary>
+        /// Die class contains Roll() Method. Die.Roll() Returns a random number from 1 to 6.
+        /// </summary>
+
         //Property
         private int number;
         public int Number

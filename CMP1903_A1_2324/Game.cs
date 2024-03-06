@@ -15,6 +15,13 @@ namespace CMP1903_A1_2324
          * rolls could be continous, and the totals and other statistics could be summarised for example.
          */
 
+        /// <summary>
+        /// Game class contains playGame() Method. playGame() Rolls instantiates and 
+        /// creates 3 die objects which then call the roll method. These are done in a loop and loaded in to a list. 
+        /// Outcome of the die and the sum are outputted to the console.
+        /// Finally the method returns two values. A list of 3 dice and the sum of all die. These can then be used in the testing class.
+        /// </summary>
+
         //Methods
         public (List<int>, int) playGame()
         {
